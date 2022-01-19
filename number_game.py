@@ -12,7 +12,7 @@ def start_game():
             user_guess = int(user_guess)
             if user_guess > 100 or user_guess < 0:
                 raise ValueError('It can only be as high as 100 or as low as 0 {}, please try again'.format(user_name))
-        except ValueError as err:
+        except ValueError:
             print("Sorry that's not quite right! Please use a number between 1 and 100")
         else:
             if int(user_guess) < solution:
