@@ -33,12 +33,15 @@ def start_game():
                 print('You have had {} guesses! Please try again'.format(guesses))
             else:
                 winner = True
-                print('Yay! You have found the secret code {}! Welcome to the cool side'.format(user_name))
+                print('Yay! You have found the secret code {} in {} tries! Welcome to the cool side'.format(user_name, guesses))
                 user_replay =  input('Thank you for playing my game! Would you like to play again? Y/N   ')
                 
                 if user_replay.lower() == 'y':
                     winner = False
                     solution = random.randint(0, 100)
+                    print('The current high score is {}! Maybe you can beat that this time...'.format(guesses))
                     guesses = 0
+                else: 
+                   print('Closing game... See you again soon!') 
 
 start_game()
