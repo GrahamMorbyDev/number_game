@@ -8,6 +8,7 @@ def start_game():
     user_name = input('Can you tell me your name?   ')
     solution = random.randint(0, 100)
     guesses = 0
+    high_score = 0
 
     while not winner:
         
@@ -39,7 +40,9 @@ def start_game():
                 if user_replay.lower() == 'y':
                     winner = False
                     solution = random.randint(0, 100)
-                    print('The current high score is {}! Maybe you can beat that this time...'.format(guesses))
+                    if guesses < high_score or high_score == 0:
+                        high_score = guesses
+                    print('The current high score is {}! Maybe you can beat that this time...'.format(high_score))
                     guesses = 0
                 else: 
                    print('Closing game... See you again soon!') 
